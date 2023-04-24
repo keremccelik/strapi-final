@@ -1,0 +1,95 @@
+{
+  "kind": "collectionType",
+  "collectionName": "properties",
+  "info": {
+    "singularName": "property",
+    "pluralName": "properties",
+    "displayName": "Properties",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "rooms": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    },
+    "garage": {
+      "type": "string"
+    },
+    "yearBuild": {
+      "type": "string"
+    },
+    "base_price": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Kiralık",
+        "Satılık"
+      ],
+      "default": "Satılık",
+      "required": true
+    },
+    "adress": {
+      "type": "string"
+    },
+    "district": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::district.district"
+    },
+    "imageField": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "bathroom": {
+      "type": "string"
+    },
+    "balcony": {
+      "type": "boolean"
+    },
+    "furnished": {
+      "type": "boolean"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "pool": {
+      "type": "boolean",
+      "default": false
+    },
+    "realtor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::realtor.realtor",
+      "inversedBy": "properties"
+    }
+  }
+}
